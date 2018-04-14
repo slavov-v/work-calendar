@@ -37,14 +37,14 @@ namespace WorkCalendar
 
         public string serialize()
         {
-            return string.Format("{0};{1};{2}\n", Description, StartDate.ToString(), DueDate.ToString());
+            return string.Format("{0};{1};{2};{3}\n", Id, Description, StartDate.ToString(), DueDate.ToString());
         }
 
         public void Save()
         {
             string data = serialize();
 
-            File.AppendAllText("tasks.txt", data);
+            File.AppendAllText(EventManager.TasksFileName, data);
         }
     }
 }

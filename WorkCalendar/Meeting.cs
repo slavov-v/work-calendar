@@ -40,7 +40,7 @@ namespace WorkCalendar
         {
             string data = serialize();
 
-            File.AppendAllText("meetings.txt", data);
+            File.AppendAllText(EventManager.MeetingsFileName, data);
         }
     }
 }

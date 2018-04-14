@@ -8,9 +8,17 @@
         Title="MainWindow" Height="966.055" Width="525">
     <Grid>
         <Viewbox Margin="-4,0,0,565">
-            <Calendar x:Name="mainViewCalendar" Height="165">
-                
+            <Calendar x:Name="mainViewCalendar" Height="165" SelectedDatesChanged="mainViewCalendar_OnSelectedDatesChanged">
             </Calendar>
         </Viewbox>
+        <ListBox x:Name="listBox_Meetings" Margin="57,407,67,371"/>
+        <ListBox x:Name="listBox_Tasks" Margin="57,590,67,188"/>
+        <Label x:Name="lb_Meetings" Content="" HorizontalAlignment="Left" Margin="60,380,0,0" VerticalAlignment="Top" Width="230"/>
+        <Label x:Name="lb_Tasks" Content="" HorizontalAlignment="Left" Margin="60,564,0,0" VerticalAlignment="Top" Width="230"/>
+        <Button x:Name="btn_AddTask" Content="Add Task" HorizontalAlignment="Left" Margin="55,805,0,0" VerticalAlignment="Top" Width="75" Click="btn_AddTask_Click"/>
+        <Button x:Name="btn_AddMeeting" Content="Add Meeting" HorizontalAlignment="Left" Margin="145,805,0,0" VerticalAlignment="Top" Width="75" Click="btn_AddMeeting_Click"/>
+        <Button x:Name="btn_ConfirmAddTask" Content="Confirm" HorizontalAlignment="Right" Margin="0,805,70,0" VerticalAlignment="Top" Width="75" Click="btn_ConfirmAddTask_Click"/>
+        <TextBox x:Name="tb_Description" Margin="57,407,67,372" TextWrapping="Wrap"/>
+        <Button x:Name="btn_ConfirmAddMeeting" Content="Confirm" HorizontalAlignment="Right" Margin="0,805,70,0" VerticalAlignment="Top" Width="75" Click="btn_ConfirmAddMeeting_Click"/>
     </Grid>
 </Window>

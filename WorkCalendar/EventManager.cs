@@ -29,7 +29,7 @@ namespace WorkCalendar
         public static List<Meeting> ListAllMeetings()
         {
             List<Meeting> result = new List<Meeting>();
-            string[] readLines = File.ReadAllLines(TasksFileName);
+            string[] readLines = File.ReadAllLines(MeetingsFileName);
 
             foreach(string line in readLines)
             {
@@ -50,6 +50,18 @@ namespace WorkCalendar
             }
 
             return result;
+        }
+
+        public static List<Task> GetTasksDueDate(DateTime date)
+        {
+            List<Task> allTasks = ListAllTasks();
+            return (from task in allTasks where task.DueDate.Date == date.Date select task).ToList();
+        }
+
+        public static List<Meeting> GetMeetingsOnDate(DateTime date)
+        {
+            List<Meeting> allMeetings = ListAllMeetings();
+            return (from meeting in allMeetings where meeting.MeetDate.Date == date.Date select meeting).ToList();
         }
 
         public static void RemoveMeeting(Guid meetingId)
