@@ -80,10 +80,10 @@ namespace WorkCalendar
             File.WriteAllText(MeetingsFileName, data.ToString());
         }
 
-        public static void RemoveTask(Guid meetingId)
+        public static void RemoveTask(Guid taskId)
         {
             List<Task> allTasks = ListAllTasks();
-            int index_to_remove = allTasks.FindIndex(item => item.Id == meetingId);
+            int index_to_remove = allTasks.FindIndex(item => item.Id == taskId);
             allTasks.RemoveAt(index_to_remove);
 
             StringBuilder data = new StringBuilder();
