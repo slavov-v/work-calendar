@@ -20,5 +20,6 @@
         <Button x:Name="btn_ConfirmAddTask" Content="Confirm" HorizontalAlignment="Right" Margin="0,805,70,0" VerticalAlignment="Top" Width="75" Click="btn_ConfirmAddTask_Click"/>
         <TextBox x:Name="tb_Description" Margin="57,407,67,372" TextWrapping="Wrap"/>
         <Button x:Name="btn_ConfirmAddMeeting" Content="Confirm" HorizontalAlignment="Right" Margin="0,805,70,0" VerticalAlignment="Top" Width="75" Click="btn_ConfirmAddMeeting_Click"/>
+        <Button x:Name="btn_Cancel" Content="Cancel" HorizontalAlignment="Right" Margin="0,805,150,0" VerticalAlignment="Top" Width="75" Click="btn_Cancel_Click"/>
     </Grid>
 </Window>

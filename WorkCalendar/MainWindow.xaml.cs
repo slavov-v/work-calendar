@@ -20,6 +20,7 @@ namespace WorkCalendar
     /// </summary>
     public partial class MainWindow : Window
     {
+        // TODO: Add Task and Meeting removing
         private List<Task> currentTasks;
         private List<Meeting> currentMeetings;
         public MainWindow()
@@ -62,6 +63,7 @@ namespace WorkCalendar
             btn_ConfirmAddMeeting.Visibility = Visibility.Hidden;
             btn_ConfirmAddTask.Visibility = Visibility.Visible;
             tb_Description.Visibility = Visibility.Visible;
+            btn_Cancel.Visibility = Visibility.Visible;
             lb_Meetings.Content = "Task Description:";
             lb_Tasks.Content = string.Empty;
         }
@@ -75,6 +77,7 @@ namespace WorkCalendar
             btn_ConfirmAddTask.Visibility = Visibility.Hidden;
             btn_ConfirmAddMeeting.Visibility = Visibility.Visible;
             tb_Description.Visibility = Visibility.Visible;
+            btn_Cancel.Visibility = Visibility.Visible;
             lb_Meetings.Content = "Meeting Description:";
             lb_Tasks.Content = string.Empty;
         }
@@ -84,6 +87,7 @@ namespace WorkCalendar
             btn_ConfirmAddTask.Visibility = Visibility.Hidden;
             tb_Description.Visibility = Visibility.Hidden;
             btn_ConfirmAddMeeting.Visibility = Visibility.Hidden;
+            btn_Cancel.Visibility = Visibility.Hidden;
             btn_AddTask.Visibility = Visibility.Visible;
             btn_AddMeeting.Visibility = Visibility.Visible;
             listBox_Tasks.Visibility = Visibility.Visible;
@@ -125,6 +129,11 @@ namespace WorkCalendar
             newMeeting.Save();
             triggerGeneralMode();
             populateLists();
+        }
+
+        private void btn_Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            triggerGeneralMode();
         }
     }
 }
